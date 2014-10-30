@@ -312,7 +312,9 @@ public class Uploader {
         String collectionName = prefs.getString("cloud_storage_mongodb_collection", null);
         String dsCollectionName = prefs.getString("cloud_storage_mongodb_device_status_collection", "devicestatus");
 
-        if (dbURI != null && collectionName != null) {
+Boolean dbURIValidator = dbURI.matches("^mongodb:\/\/(\s*\S*):(\s*\S*)@ds(\d*).mongolab.com:(\d*)\/(\s*\S*)")
+
+        if (dbURIValidator = true && collectionName != null) {
             try {
 
                 // connect to db
